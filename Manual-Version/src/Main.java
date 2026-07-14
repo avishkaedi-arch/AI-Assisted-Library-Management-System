@@ -1,17 +1,12 @@
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
-
         Scanner input = new Scanner(System.in);
-
         Library library = new Library();
-
         int choice;
 
         do {
-
             System.out.println("\n===== LIBRARY MANAGEMENT SYSTEM =====");
             System.out.println("1. Add Book");
             System.out.println("2. Display Books");
@@ -26,9 +21,7 @@ public class Main {
             input.nextLine();
 
             switch (choice) {
-
                 case 1:
-
                     System.out.print("Book ID: ");
                     int id = input.nextInt();
                     input.nextLine();
@@ -46,64 +39,46 @@ public class Main {
                     break;
 
                 case 2:
-
                     library.displayBooks();
-
                     break;
 
                 case 3:
-
                     System.out.print("Enter title: ");
-
                     String search = input.nextLine();
 
                     library.searchBook(search);
-
                     break;
 
                 case 4:
-
                     System.out.print("Enter Book ID: ");
-
                     int borrowId = input.nextInt();
 
                     library.borrowBook(borrowId);
-
                     break;
 
                 case 5:
-
                     System.out.print("Enter Book ID: ");
-
                     int returnId = input.nextInt();
-
+                    
                     library.returnBook(returnId);
-
                     break;
 
                 case 6:
-
                     System.out.print("Enter Book ID: ");
-
                     int removeId = input.nextInt();
 
                     library.removeBook(removeId);
-
                     break;
 
                 case 7:
-
                     System.out.println("Thank you for using the system.");
-
                     break;
 
                 default:
-
                     System.out.println("Invalid choice.");
             }
 
         } while (choice != 7);
-
         input.close();
     }
 }
